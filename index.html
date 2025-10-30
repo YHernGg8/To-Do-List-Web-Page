@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy To-Do List</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="todo-card">
+    <header>
+      <h1>My To-Do List</h1>
+      <button id="toggle-theme">Toggle Theme</button>
+    </header>
+
+    <!-- Quote of the day -->
+    <div class="quote-box" id="quote-box"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input type="text" id="task-desc" placeholder="Task description">
+      <input type="date" id="task-date">
+      <input type="time" id="task-time">
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button id="add-task">Add Task</button>
+      <input type="text" id="search-task" placeholder="Search tasks...">
+    </div>
+
+    <!-- Task list -->
+    <div id="task-list"></div>
+
+    <!-- Calendar View -->
+    <div id="calendar"></div>
+
+    <!-- Dashboard / statistics -->
+    <canvas id="statsChart" height="200"></canvas>
+    <div id="dashboard"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

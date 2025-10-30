@@ -1,0 +1,161 @@
+:root {
+  --low-color:#4caf50;
+  --medium-color:#ff9800;
+  --high-color:#f44336;
+  --light-text:#fff;
+  --dark-text:#fff;
+}
+
+/* Body & background */
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:0; padding:0;
+  display:flex; justify-content:center; align-items:flex-start; /* 改为顶部对齐 */
+  min-height:100vh;
+  overflow-y: auto; /* 允许纵向滚动 */
+  background: radial-gradient(circle at 20% 30%, #1b2735, #090a0f);
+  color: var(--light-text);
+  transition:0.3s;
+  position: relative;
+  padding-top: 20px; /* 避免顶部贴边 */
+}
+
+/* Galaxy floating icons */
+.floating-icon{
+  position: absolute;
+  pointer-events:none;
+  animation: floatIcon 15s linear infinite;
+}
+@keyframes floatIcon{
+  0%{transform: translateY(0px) rotate(0deg);}
+  50%{transform: translateY(-30px) rotate(180deg);}
+  100%{transform: translateY(0px) rotate(360deg);}
+}
+
+/* Container & glass card */
+.container{
+  width:100%; max-width:600px;
+  position: relative;
+  z-index:1;
+}
+.todo-card{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding:2rem 1.5rem;
+  border-radius:25px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Header */
+header{
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;
+}
+header h1{ font-size:2rem; letter-spacing:1px; }
+
+/* Quote box */
+.quote-box{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  padding:0.7rem 1rem;
+  border-radius:15px;
+  margin-bottom:1rem;
+  text-align:center;
+  font-style:italic;
+  font-size:0.95rem;
+  color:#ffe;
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Controls */
+.controls{
+  display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;
+}
+.controls input, .controls select, .controls button{
+  padding:0.6rem 0.8rem;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  flex:1;
+  transition:0.2s;
+}
+.controls button{
+  background: linear-gradient(135deg,#6c63ff,#ff63c3);
+  color:white; cursor:pointer;
+}
+.controls button:hover{ transform: scale(1.05); }
+
+/* Task list */
+#task-list .task{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0.8rem; margin:0.4rem 0;
+  border-radius:15px;
+  color:white; cursor:pointer; transition:0.3s;
+  font-size:0.95rem;
+}
+.task.low{background:#4caf50;}
+.task.medium{background:#ff9800;}
+.task.high{background:#f44336;}
+.task.completed{opacity:0.6; text-decoration:line-through;}
+.task:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.task button{
+  background:transparent; border:none; color:white; font-size:1rem;
+  margin-left:0.3rem; cursor:pointer; transition:0.2s;
+}
+.task .delete-btn{
+  background:rgba(255,0,0,0.6); border-radius:5px; padding:0 6px;
+}
+.task .delete-btn:hover{
+  background:rgba(255,0,0,0.9);
+}
+
+/* Dashboard */
+#dashboard{
+  margin-top:1rem; padding:0.8rem; background: rgba(255,255,255,0.1);
+  border-radius:15px; text-align:center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-weight:500;
+  letter-spacing:0.5px;
+}
+
+/* Calendar grid */
+#calendar{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap:4px;
+  margin-top:1rem;
+}
+#calendar .calendar-day{
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:10px;
+  min-height:60px;
+  font-size:0.85rem;
+  padding:2px 5px;
+  position:relative;
+}
+#calendar .calendar-day .task-item{
+  display:block;
+  background: rgba(255,255,255,0.2);
+  border-radius:5px;
+  margin:1px 0;
+  padding:1px 4px;
+  font-size:0.75rem;
+  cursor:pointer;
+}
+
+/* Placeholder style */
+::placeholder{ color: rgba(255,255,255,0.7); }
+
+
+
+
+
+
+
+
